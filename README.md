@@ -22,6 +22,9 @@ Python usage is meant to be just like the lib requets itself.
 
 Example:
 ```bash
+import requests
+import tor_requests
+
 url = 'https://url-to-fetch.com/'
 
 # Regular requests lib
