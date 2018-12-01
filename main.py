@@ -1,21 +1,9 @@
-import requests
 import tor_requests
-import json
 
+pool = tor_requests.SessionPool(5)
+print(pool.ips())
 
-# Regular requests
-print('Using requests...')
-session = requests.session()
-request = session.get('https://api.ipify.org?format=json')
-response = json.loads(request.text)
-ip = response['ip']
-print('My Real IP:', ip)
-
-# Tor requests
-print('Using tor_requests...')
-session = tor_requests.session()
-request = session.get('https://api.ipify.org?format=json')
-response = json.loads(request.text)
-ip = response['ip']
-
-print('My Hidden IP:', ip)
+for i in range(10):
+    s = pool.next()
+    print(s, s.ip())
+    

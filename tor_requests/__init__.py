@@ -1,2 +1,2 @@
 from requests import *
-from .sessions import session, Session
+from .sessions import session, Session, SessionPool

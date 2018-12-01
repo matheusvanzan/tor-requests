@@ -50,3 +50,15 @@ or to check running port
 apt-get install nmap
 nmap -Pn localhost
 ```
+
+
+nano /etc/tor/torrc
+
+uncomment these lines
+#ControlPort 9051
+## If you enable the controlport, be sure to enable one of these
+## authentication methods, to prevent attackers from accessing it.
+#HashedControlPassword 16:872860B76453A77D60CA2BB8C1A7042072093276A3D701AD684053EC4C
+
+to generate a password
+tor --hash-password "vanzan"
